@@ -1,0 +1,78 @@
+.login-container{
+    display:flex;
+    margin:auto;
+    margin-top: 15%;
+    width:20%;
+}
+#header{
+    text-align: center;
+}
+.login-form{
+    padding:15px;
+    padding-top: 0;
+    border:2px solid black;
+    border-radius: 3px;
+}
+form input{
+    background: #f2f2f2;
+    border: 0;
+    border-radius: 5px;
+    width:100%;
+    font-size:18px;
+    height:35px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    padding-left:10px; 
+}
+#login-btn{
+    background:#222;
+    color: white;
+}
+    
+/* Profile page css */
+.container{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    margin-top:10%;
+    width: 60%;
+}
+#profile-photo{
+    width: 30%;
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}   
+#bio{
+    width: 70%;
+    font-size: 16px;
+    font-family: Verdana;
+    float: left;
+}
+#user-handle{
+    font-size:22px;
+}
+/* Give top and bottom margin to middle div, so that there is space between all three divs. */
+#user-stats{
+    margin:20px 0;
+}
+/* Give left and right margin to middle span, so that there is space between all three span. */
+#user-stats span:nth-child(2){
+    margin:0 20px;
+}
+#fButton{
+    width:120px;
+    height: 30px;
+    font-size:22px;
+    text-align: center; 
+    background-color:#3897f0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
