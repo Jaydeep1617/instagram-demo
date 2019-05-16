@@ -8,42 +8,58 @@
 </head>
 <body>
   <!-- Login Form -->
-  <div class="login-container">
-    <div class="login-form">
+  <div class="flip-card">
+    <div class="login-container">
+      <div class="login-form front-card">
         <h2 id="header">Instagram</h1>
         <hr>        
         <form id="lForm">
-            <input type="email" name="email" placeholder="email" required>
-            <input type="password" name="password" placeholder="password" required>
-            <input type="submit" value="Login" id="login-btn" name="login">
-      </form>
+          <input type="email" name="email" placeholder="email" required>
+          <input type="password" name="password" placeholder="password" required>
+          <input type="submit" value="Login" name="login">
+        </form>
+        <div id="forgot-btn-container">
+          <button id="forgot-btn">Forgot your password?</button>
+        </div>
+      </div>
+      <div class="login-form back-card">
+        <h2 id="header">Reset Password</h1>
+        <hr>        
+        <form id="lForm">
+          <input type="email" name="email" placeholder="email" required>
+          <input type="submit" value="Reset My Password" name="login">
+        </form>
+        <div id="back-btn-container">
+          <button id="back-btn">Back</button>
+        </div>
+      </div> 
     </div>
   </div>
-  <!-- Templae for profile page-->
+  <!-- Template for profile page-->
   <template>
     <div class="container">
       <div id="profile-photo">
-          <img src="https://instagram.fdel6-1.fna.fbcdn.net/vp/f345c19183c17a9c832ce82ce7252a97/5D607721/t51.2885-19/s320x320/58662478_344986506158915_3558786657102594048_n.jpg?_nc_ht=instagram.fdel6-1.fna.fbcdn.net">
+        <img id="profile-img" src="https://instagram.fdel6-1.fna.fbcdn.net/vp/f345c19183c17a9c832ce82ce7252a97/5D607721/t51.2885-19/s320x320/58662478_344986506158915_3558786657102594048_n.jpg?_nc_ht=instagram.fdel6-1.fna.fbcdn.net">
       </div>
       <div id="bio">
-          <div id="user-handle">
-              <span id="username">
-                  
-              </span>
-              <span>
-                  <button id="fButton">Follow</button>
-              </span>
-          </div>
-          <div id="user-stats">
-              <span><b>17</b> posts</span>
-              <span><b>260</b> followers</span>
-              <span><b>264</b> following</span>
-          </div>
-          <div id="user-description">
-              <p>Jaydeep Eraniya : DAIICTian <br> 
-              Introvert!! Music Reading Travelling <br> 
-              Sprinklr Summer-Intern. Gandhinagar <--> Gurgaon</p>
-          </div>
+        <div id="user-handle">
+          <span id="username">
+              
+          </span>
+          <span>
+            <button id="fButton">Follow</button>
+          </span>
+        </div>
+        <div id="user-stats">
+          <span><b>17</b> posts</span>
+          <span><b>260</b> followers</span>
+          <span><b>264</b> following</span>
+        </div>
+        <div id="user-description">
+          <p>Jaydeep Eraniya : DAIICTian <br> 
+          Introvert!! Music Reading Travelling <br> 
+          Sprinklr Summer-Intern. Gandhinagar <--> Gurgaon</p>
+        </div>
       </div>
     </div>
   </template>

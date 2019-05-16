@@ -1,19 +1,39 @@
-.login-container{
-    display:flex;
+.flip-card {
+    width: 300px;
+    height:250px;
+    perspective: 500px;
     margin:auto;
     margin-top: 15%;
-    width:20%;
+}
+.login-container{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+    box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+.front-card, .back-card{
+    position: absolute;
+    backface-visibility: hidden;
+}
+.front-card{
+    z-index: 2;
+}
+.back-card{
+    z-index: 1;
+    transform: rotateY(180deg);
 }
 #header{
     text-align: center;
 }
+
 .login-form{
     padding:15px;
     padding-top: 0;
-    border:2px solid black;
-    border-radius: 3px;
 }
-form input{
+#lForm input{
     background: #f2f2f2;
     border: 0;
     border-radius: 5px;
@@ -24,9 +44,18 @@ form input{
     box-sizing: border-box;
     padding-left:10px; 
 }
-#login-btn{
+#lForm input[type=submit]{
     background:#222;
     color: white;
+}
+
+#forgot-btn-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3%;
+}
+#back-btn-container{
+    margin-top:3%;
 }
     
 /* Profile page css */
@@ -43,7 +72,7 @@ form input{
     width: 30%;
     text-align: center;
 }
-img{
+#profile-img{
     width: 200px;
     height: 200px;
     border-radius: 50%;

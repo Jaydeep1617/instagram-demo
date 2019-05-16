@@ -21,31 +21,28 @@ const Users=[{
 
 const loginForm=document.forms["lForm"];
 let curUser;
-loginForm.addEventListener("submit",function(e){
-    e.preventDefault();
+loginForm.addEventListener("submit",function(event){
+    event.preventDefault();
 
     const email=loginForm["email"].value;
     const password=loginForm["password"].value;
-    // let userFound=false; 
     
-    curUser=Users.find(function(user){
+    curUser=Users.find((user)=>{
         return email===user.email && password===user.password; 
     });
-    // Users.forEach( user=> {
-    //     if(email===user.email && password===user.password){
-    //         userFound=true;
-    //         curUser=user;
-    //     }
-    // });
-    
-    //Dispaly profile page and remove login page
+
     if(curUser!==undefined){
-        let temp =  document.getElementsByTagName("template")[0];
-        let clon123 = temp.content.cloneNode(true);
-        let loginCon=document.getElementsByClassName("login-container")[0];
-        document.body.appendChild(clon123);
-        document.body.removeChild(loginCon);
-        displayDetails();
+        
+        const template =  document.getElementsByTagName("template")[0];
+        const profile = document.importNode(template.content,true);
+        const loginContainer=document.getElementsByClassName("flip-card")[0];
+        const bodyEle=document.body;
+        bodyEle.appendChild(profile);
+        bodyEle.removeChild(loginContainer);
+
+        const usernameSpan=document.getElementById("username");
+        usernameSpan.innerText=curUser.uName;
+        
         followBtnHandler();
     }
     else{
@@ -68,7 +65,14 @@ function followBtnHandler(){
     });
 };
 
-function displayDetails(){
-    const usernameSpan=document.getElementById("username");
-    usernameSpan.innerText=curUser.uName;
-}
+
+
+const forgotBtn=document.getElementById("forgot-btn");
+forgotBtn.addEventListener("click",function(){
+    document.getElementsByClassName("login-container")[0].style.cssText="transform: rotateY(180deg);";
+});
+
+const backBtn=document.getElementById("back-btn");
+backBtn.addEventListener("click",function(){
+    document.getElementsByClassName("login-container")[0].style.cssText="transform: rotateY(0);";
+});
