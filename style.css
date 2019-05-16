@@ -33,7 +33,7 @@
     padding:15px;
     padding-top: 0;
 }
-#lForm input{
+#lForm input,#resetForm input{
     background: #f2f2f2;
     border: 0;
     border-radius: 5px;
@@ -44,7 +44,7 @@
     box-sizing: border-box;
     padding-left:10px; 
 }
-#lForm input[type=submit]{
+#lForm input[type=submit],#resetForm input[type=submit]{
     background:#222;
     color: white;
 }
